@@ -1,0 +1,16 @@
+  game.StarterGui:SetCore("SendNotification", {
+	Title = "Animation Script",
+	Text = "Tite ni Jared Mahaba",
+	Duration = 30
+})
+
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=909997997"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+Animate.swim.SwimAnim.AnimationId = "http://www.roblox.com/asset/?id=656119721"
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
