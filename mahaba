@@ -1,16 +1,79 @@
-  game.StarterGui:SetCore("SendNotification", {
-	Title = "Animation Script",
-	Text = "Tite ni Jared Mahaba",
-	Duration = 30
-})
+local Workspace = game:GetService("Workspace")
+local Players1 = game.Players.LocalPlayer
 
-local Animate = game.Players.LocalPlayer.Character.Animate
-Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
-Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782845736"
-Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
-Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
-Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
-Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=909997997"
-Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
-Animate.swim.SwimAnim.AnimationId = "http://www.roblox.com/asset/?id=656119721"
-game.Players.LocalPlayer.Character.Humanoid.Jump = true
+local Character = Players1.Character
+
+function Buy(Object)
+    local Object = Object
+    local LockPicker = Workspace.Ignored.Shop[Object]
+    Character.HumanoidRootPart.CFrame = LockPicker.Head.CFrame + Vector3.new(0, 3, 0)
+    wait(0.5)
+    fireclickdetector(LockPicker.ClickDetector)
+    fireclickdetector(LockPicker.ClickDetector)
+end
+
+Buy("[Revolver] - $1300")
+
+wait(0.5)
+
+game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
+    "Reload",
+    {
+        Name = "[Revolver]", --// reminder: [Double-Barrel SG] or [Revolver] works for any gun but i put it here so i can just copy and paste whenever i want to
+        Parent = Game.Players.LocalPlayer.Backpack,
+        ClassName = "Tool",
+        Ammo = {Value = math.huge*9e9},
+        MaxAmmo = {Value = 0},
+        GunScript = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].GunScript,
+        Handle = game:GetService("Players").LocalPlayer.Backpack["[Revolver]"].Handle
+    }
+)
+
+wait(2)
+
+local nigger = game:GetService('Players').LocalPlayer
+        local Nigger2 = nigger.Character
+        Nigger2:FindFirstChildOfClass('Humanoid'):Destroy()
+        local shitCharacter = nigger.CharacterAdded:Wait()
+        local spoofFolder = Instance.new('Folder')
+        spoofFolder.Name = 'FULLY_LOADED_CHAR'
+        spoofFolder.Parent = shitCharacter
+        shitCharacter:WaitForChild('BodyEffects').Dead:Destroy()
+        shitCharacter:WaitForChild('BodyEffects').BreakingParts:Destroy()
+        local spoofValue = Instance.new('BoolValue', shitCharacter.BodyEffects)
+        spoofValue.Name = 'Dead'
+        wait(1)
+        nigger.Character:WaitForChild('Humanoid'):WaitForChild('BodyWidthScale').Value = 0.5
+
+
+local function givecash(player, amount)
+--// MAX CURRENCY
+game.ReplicatedStorage:FindFirstChild(".gg/untitledhood"):FireServer(
+    "Reload",
+    {
+        Name = "[Revolver]",
+        Ammo = player.DataFolder.Information.MuscleInformation,
+        MaxAmmo = {Value = amount},
+    }
+) 
+end
+--999,999,999,999 - 999BBillion
+--900,000,000,000 - 900B
+--1,000,000 - 1M
+
+--givecash(game.Players['IHECKINGLUVHENT_TAI'], 8999999999999999999 + 96969696969696420)
+
+local oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+for I,V in pairs(game.Players:GetPlayers()) do
+        print(V.Name)
+        pcall(function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = V.Character.HumanoidRootPart.CFrame
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Dm me! ATKBroly.2175", "All")
+            task.wait(.5)
+        end)
+        givecash(V, 999999999999)
+        task.wait(1.7)
+end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldpos
+ updated 
